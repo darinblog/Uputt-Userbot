@@ -34,10 +34,10 @@ async def _(event):
     yinsevent = await eor(event, get_string("com_1"))
     async with event.client.conversation(chat) as conv:
         try:
-            await conv.send_message(f"/search_id {uid}")
+            await conv.send_message(f"{uid}")
         except YouBlockedUserError:
             await event.client(UnblockRequest(chat))
-            await conv.send_message(f"/search_id {uid}")
+            await conv.send_message(f"{uid}")
         responses = []
         while True:
             try:
